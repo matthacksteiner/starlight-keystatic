@@ -1,0 +1,41 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+const { src, alt, caption } = Astro.props;
+const originalSrc = src.replace('/t_atp-eb-docs', '');
+---
+
+<figure class="my-8">
+  <img
+    src={src}
+    data-zoom-src={originalSrc}
+    width='720'
+    height='auto'
+    alt={alt}
+    class="w-full rounded-lg"
+    loading="lazy"
+    data-zoomable
+  />
+  {caption && <figcaption class="mt-2 text-sm text-gray-600">{caption}</figcaption>}
+</figure>
+
+<script>
+  import mediumZoom from 'medium-zoom';
+
+  mediumZoom('[data-zoomable]', {
+  margin: 24,
+  background: '#000',
+  scrollOffset: 0,
+})
+</script>
+
+<style is:global>
+  .medium-zoom-overlay,
+  .medium-zoom-image--opened {
+    z-index: 999;
+  }
+</style>

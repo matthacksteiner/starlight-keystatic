@@ -1,0 +1,13 @@
+{
+  "sections": [
+    {
+      "label": "Components",
+      "kind": {
+        "discriminant": "autogenerate",
+        "value": {
+          "directory": "components"
+        }
+      }
+    }
+  ]
+}

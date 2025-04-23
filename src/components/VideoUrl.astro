@@ -1,0 +1,68 @@
+---
+interface Props {
+  src: string;
+  caption?: string;
+}
+
+const { src, caption } = Astro.props;
+
+// Helper function to determine video type and return appropriate element
+function getVideoElement(src: string) {
+  // YouTube URL patterns
+  const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
+  // Cloudinary URL pattern
+  const cloudinaryRegex = /.*cloudinary\.com.*/;
+
+  if (youtubeRegex.test(src)) {
+    // Convert YouTube URL to embed URL
+    const videoId = src.includes('youtu.be')
+      ? src.split('/').pop()
+      : new URL(src).searchParams.get('v');
+    return `<iframe
+      width="100%"
+      height="400"
+      src="https://www.youtube.com/embed/${videoId}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      class="rounded-lg"
+    ></iframe>`;
+  } else if (cloudinaryRegex.test(src)) {
+    // Extract public_id from Cloudinary URL
+    const urlParts = src.split('/');
+    const publicId = urlParts[urlParts.length - 1].split('.')[0];
+    const cloudName = 'dggmtkvcj'; // You might want to make this configurable
+
+    return `<iframe
+      src="https://player.cloudinary.com/embed/?cloud_name=${cloudName}&public_id=${publicId}&profile=cld-default"
+      width="640"
+      height="360"
+      style="height: auto; width: 100%; aspect-ratio: 640 / 360;"
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      allowfullscreen
+      frameborder="0"
+      class="rounded-lg"
+    ></iframe>`;
+  } else {
+    // Direct video file
+    return `<video
+      controls
+      width="100%"
+      class="rounded-lg"
+      preload="metadata"
+    >
+      <source src="${src}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>`;
+  }
+}
+
+const videoElement = getVideoElement(src);
+---
+
+<figure class="my-8">
+  <Fragment set:html={videoElement} />
+  {caption && <figcaption class="mt-2 text-sm text-gray-600">{caption}</figcaption>}
+</figure>
+
