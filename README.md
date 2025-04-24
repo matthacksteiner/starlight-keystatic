@@ -131,3 +131,11 @@ content.
 
 Use an external service to upload media files like Cloudinary and paste the code
 inside the component blocks.
+
+## Add Template
+
+If you want to add this template to your own repository, follow these steps:
+
+1. `git remote add template https://github.com/matthacksteiner/starlight-keystatic`
+2. `git fetch --all`
+3. `git merge template/main --allow-unrelated-histories`
