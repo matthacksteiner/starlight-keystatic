@@ -6,18 +6,19 @@ A modern documentation website built with [Astro](https://astro.build),
 
 ## 📚 Overview
 
-This project is a documentation site that leverages Starlight (v0.34.0), Astro's
-official documentation theme. It provides a fast, accessible, and customizable
-platform for creating technical documentation.
+This project is a documentation site that leverages Starlight, Astro's official
+documentation theme. It provides a fast, accessible, and customizable platform
+for creating technical documentation.
 
 Built with:
 
 - [Astro](https://astro.build) v5.7.5
 - [Starlight](https://starlight.astro.build) v0.34.0
-- [Keystatic](https://keystatic.com) v5.0.0
+- [Keystatic Core](https://keystatic.com) v0.5.47
+- [Keystatic Astro](https://keystatic.com) v5.0.6
 
 Forked and inspired by:
-[Starlight Keystatic](https://github.com/keystatic/starlight-keystatic).
+[Starlight Keystatic](https://github.com/jordangeizer/starlight-keystatic).
 
 ## ✨ Features
 
@@ -32,6 +33,26 @@ Forked and inspired by:
 - ☁️ Keystatic Cloud Ready
 - 📅 Last Deployment Date
 - 🔍 Medium Zoom Image
+
+## 🧩 Components
+
+### Starlight
+
+- Badge - display a customizable badge
+- Aside - create stylized asides/callouts
+- Card - create stylized content cards
+- CardGrid - organize cards in a responsive grid
+- Icon - display SVG icons
+- FileTree - display file structure
+- LinkCard - create a card that links to another page
+- LinkButton - create a button that links to another URL
+- Tabs - create tabbed content sections
+- Steps - create a numbered list of steps
+
+### Custom Astro Components
+
+- ImageUrl - paste an image url with zoom capability
+- VideoUrl - paste a video url
 
 ## 🚀 Project Structure
 
@@ -74,7 +95,7 @@ Forked and inspired by:
 
 To customize your documentation:
 
-1. Modify `src/content/config.ts` for Starlight configuration
+1. Modify `src/content.config.ts` for Starlight configuration
 2. Update `astro.config.mjs` for Astro configuration
 3. Add custom styles and components as needed
 
@@ -95,7 +116,7 @@ content.
 
 1. Navigate to `localhost:4321/keystatic` in your browser to access the CMS
    dashboard
-2. Customize the CMS schema in `keystatic.config.ts`
+2. Customize the CMS schema in `keystatic.config.tsx`
 
 ### Features of Keystatic Integration
 

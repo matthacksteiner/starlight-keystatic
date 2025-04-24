@@ -1,13 +1,11 @@
 ---
-
-import type { ComponentProps } from 'astro/types';
 import Search from '@astrojs/starlight/components/Search.astro';
 import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
 import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
 import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
 import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
 
-const deployDate = new Date().toLocaleString('de-DE', {
+const deployDate = new Date().toLocaleString('en-US', {
   year: 'numeric',
   month: '2-digit',
   day: '2-digit',
@@ -26,7 +24,7 @@ const deployDate = new Date().toLocaleString('de-DE', {
     <Search {...Astro.props} />
 	</div>
 	<div class="sl-hidden md:sl-flex right-group">
-    <span class="text-[var(--sl-color-text-accent)] text-xs">Last Update: {deployDate} Uhr</span>
+    <span class="text-[var(--sl-color-text-accent)] text-xs">Last Update: {deployDate}</span>
     <div class="h-8 w-[1px] bg-[var(--sl-color-hairline)]"></div>
 		<div class="sl-flex social-icons">
 			<SocialIcons {...Astro.props} />
@@ -45,7 +43,6 @@ const deployDate = new Date().toLocaleString('de-DE', {
 	}
 
 	.title-wrapper {
-		/* Prevent long titles overflowing and covering the search and menu buttons on narrow viewports. */
 		overflow: hidden;
 	}
 

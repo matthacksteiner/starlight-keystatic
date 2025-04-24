@@ -1,0 +1,76 @@
+---
+title: Video URL
+description: Use the <VideoUrl> component to embed videos from various sources including YouTube, Cloudinary, or direct video files.
+template: doc
+pagefind: true
+draft: false
+sidebar:
+  hidden: false
+---
+Use the `<VideoUrl>` component to embed videos from various sources. The component automatically detects the video source and provides an appropriate player for YouTube videos, Cloudinary videos, or direct video files.
+
+## Usage
+
+The `<VideoUrl>` component requires a `src` attribute and can optionally include a `caption`.
+
+### YouTube video
+
+<VideoUrl
+  src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  caption="YouTube video example"
+/>
+
+```jsx title=src/content/docs/example.mdx
+<VideoUrl
+  src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  caption="YouTube video example"
+/>
+```
+
+### Direct video file
+
+<VideoUrl
+  src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+  caption="Direct video file example"
+/>
+
+```jsx title=src/content/docs/example.mdx
+<VideoUrl
+  src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/720/Big_Buck_Bunny_720_10s_1MB.mp4"
+  caption="Direct video file example"
+/>
+```
+
+## Features
+
+- **Smart source detection** - Automatically identifies YouTube, Cloudinary, or direct video URLs
+- **Responsive embedding** - Videos display properly on all screen sizes
+- **YouTube integration** - Properly embeds YouTube videos using youtube-nocookie.com domain for enhanced privacy
+- **Maintained aspect ratio** - Videos maintain their original aspect ratio (16:9 for YouTube)
+- **Cloudinary support** - Utilizes Cloudinary's player for videos hosted on Cloudinary
+- **Native video support** - Falls back to HTML5 video element for direct video files
+- **Captions** - Add descriptive text below the video
+
+## Keystatic config
+
+To add this component as a Keystatic content component, register it with the following schema:
+
+```tsx title=keystatic.config.tsx
+...
+VideoUrl: block({
+  label: 'Video URL',
+  description: 'Embed videos from YouTube, Cloudinary, or direct sources',
+  schema: {
+    src: fields.url({
+      label: 'Video URL',
+      description: 'URL to the video (YouTube, Cloudinary, or direct file)',
+      validation: { isRequired: true },
+    }),
+    caption: fields.text({
+      label: 'Caption',
+      description: 'Optional caption to display below the video',
+    }),
+  },
+}),
+...
+```

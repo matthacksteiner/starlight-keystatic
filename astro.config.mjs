@@ -16,7 +16,7 @@ export default defineConfig({
       title: 'Astro Starlight powered by keystatic',
       customCss: ['./src/styles/global.css', './src/fonts/font-face.css'],
       components: {
-        Header: './src/components/CustomHeader.astro',
+        Header: './src/custom/CustomHeader.astro',
       },
       logo: {
         light: './src/assets/logo-light.svg',
@@ -56,6 +56,11 @@ export default defineConfig({
         {
           label: 'Introduction',
           autogenerate: { directory: 'intro' },
+          collapsed: false,
+        },
+        {
+          label: 'Components',
+          autogenerate: { directory: 'components' },
           collapsed: false,
         },
       ],

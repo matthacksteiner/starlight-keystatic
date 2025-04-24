@@ -1,0 +1,80 @@
+---
+title: Image URL
+description: Use the <ImageUrl> component to display images with zoom capability and optional captions.
+template: doc
+pagefind: true
+draft: false
+sidebar:
+  hidden: false
+---
+Use the `<ImageUrl>` component to display images with zoom capability and optional captions. The component includes the [medium-zoom](https://github.com/francoischalifour/medium-zoom) library to allow users to click on images to view them in a larger size.
+
+## Usage
+
+The `<ImageUrl>` component requires `src` and `alt` attributes and can optionally include a `caption`.
+
+### Basic image
+
+<ImageUrl
+  src="https://i.postimg.cc/BQsmBvGv/astro-banner.png"
+  alt="A sample image description"
+/>
+
+```jsx title=src/content/docs/example.mdx
+<ImageUrl
+  src="https://i.postimg.cc/BQsmBvGv/astro-banner.png"
+  alt="A sample image description"
+/>
+```
+
+### Image with caption
+
+<ImageUrl
+  src="https://i.postimg.cc/BQsmBvGv/astro-banner.png"
+  alt="A sample image description"
+  caption="This is a descriptive caption for the image"
+/>
+
+```jsx title=src/content/docs/example.mdx
+<ImageUrl
+  src="https://i.postimg.cc/BQsmBvGv/astro-banner.png"
+  alt="A sample image description"
+  caption="This is a descriptive caption for the image"
+/>
+```
+
+## Features
+
+- **Responsive** - Images are displayed with full width and proper responsive behavior
+- **Zoom capability** - Click on an image to zoom in using the medium-zoom library
+- **Lazy loading** - Images load only when they enter the viewport
+- **Captions** - Add descriptive text below the image
+
+## Keystatic config
+
+To add this component as a Keystatic content component, register it with the following schema:
+
+```tsx title=keystatic.config.tsx
+...
+ImageUrl: block({
+  label: 'Image URL',
+  description: 'Display an image with zoom capability and optional caption',
+  schema: {
+    src: fields.url({
+      label: 'Image URL',
+      description: 'URL to the image',
+      validation: { isRequired: true },
+    }),
+    alt: fields.text({
+      label: 'Alt Text',
+      description: 'Descriptive text for accessibility',
+      validation: { isRequired: true },
+    }),
+    caption: fields.text({
+      label: 'Caption',
+      description: 'Optional caption to display below the image',
+    }),
+  },
+}),
+...
+```
