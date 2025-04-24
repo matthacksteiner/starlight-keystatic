@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Linotype';
+  font-family: 'Inter';
   /* Use a relative path to the local font file in `url()`. */
-  src: url('./linotypeunivers-430regular.woff2') format('woff2');
+  src: url('./Inter-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

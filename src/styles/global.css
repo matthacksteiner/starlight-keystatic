@@ -5,25 +5,20 @@
 @import 'tailwindcss/utilities.css' layer(utilities);
 
 @theme {
+  --font-sans: 'Inter-Regular';
+
   /* Generated accent color palettes. */
-  --color-accent-200: #f4b7b5;
-  --color-accent-600: #c90032;
-  --color-accent-900: #5d111a;
-  --color-accent-950: #401215;
+  --color-accent-200: #92d1fe;
+  --color-accent-600: #0073aa;
+  --color-accent-900: #003653;
+  --color-accent-950: #00273d;
   /* Generated gray color palettes. */
-  --color-gray-100: #f9f5f5;
-  --color-gray-200: #f3ecea;
-  --color-gray-300: #c8c0be;
-  --color-gray-400: #978784;
-  --color-gray-500: #635451;
-  --color-gray-700: #423432;
-  --color-gray-800: #302321;
-  --color-gray-900: #1d1715;
-
-  /* Custom font */
-  --font-sans: 'Linotype';
-}
-
-main {
-  @apply hyphens-auto;
+  --color-gray-100: #f3f7f9;
+  --color-gray-200: #e7eff2;
+  --color-gray-300: #bac4c8;
+  --color-gray-400: #7b8f96;
+  --color-gray-500: #495c62;
+  --color-gray-700: #2a3b41;
+  --color-gray-800: #182a2f;
+  --color-gray-900: #121a1c;
 }

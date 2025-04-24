@@ -46,7 +46,7 @@ const createMdxSchema = () => ({
 
 // Collection definitions
 const sections = [
-  { key: 'einleitung', label: 'Einleitung', directory: 'einleitung' },
+  { key: 'intro', label: 'Introduction', directory: 'intro' },
   { key: 'abschluss', label: 'Abschluss', directory: 'abschluss' },
 ];
 
@@ -67,10 +67,10 @@ const collections = Object.fromEntries(
 
 export default config({
   storage: import.meta.env.DEV === true ? { kind: "local" } : { kind: "cloud" },
-  cloud: { project: 'dba-communications/atp-eb-docs' },
+  cloud: { project: 'your-keystatic-cloud' },
   ui: {
     brand: {
-      name: 'ATP Starlight',
+      name: 'Starlight Keystatic',
     },
   },
   collections,

@@ -6,13 +6,12 @@ interface Props {
 }
 
 const { src, alt, caption } = Astro.props;
-const originalSrc = src.replace('/t_atp-eb-docs', '');
 ---
 
 <figure class="my-8">
   <img
     src={src}
-    data-zoom-src={originalSrc}
+    data-zoom-src={src}
     width='720'
     height='auto'
     alt={alt}

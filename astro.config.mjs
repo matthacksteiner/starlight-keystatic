@@ -10,41 +10,30 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://eb-docs.atp.ag',
+  // site: 'https://yourwebsite.com',
   integrations: [
     starlight({
-      title: 'ATP EB Guidelines',
+      title: 'Astro Starlight powered by keystatic',
       customCss: ['./src/styles/global.css', './src/fonts/font-face.css'],
       components: {
         Header: './src/components/CustomHeader.astro',
-        Pagination: './src/components/CustomPagination.astro',
       },
       logo: {
-        light: './src/assets/light-logo.svg',
-        dark: './src/assets/dark-logo.svg',
+        light: './src/assets/logo-light.svg',
+        dark: './src/assets/logo-dark.svg',
         replacesTitle: true,
       },
       social: [
         {
           label: 'LinkedIn',
           icon: 'linkedin',
-          href: 'https://at.linkedin.com/company/atp-architekten-ingenieure',
-        },
-        {
-          label: 'Instagram',
-          icon: 'instagram',
-          href: 'https://www.instagram.com/atparchitekteningenieure',
-        },
-        {
-          label: 'YouTube',
-          icon: 'youtube',
-          href: 'https://www.youtube.com/@ATParchitekteningenieure',
+          href: 'https://yourlinkedin.com',
         },
       ],
       locales: {
         root: {
-          label: 'Deutsch',
-          lang: 'de',
+          label: 'English',
+          lang: 'en',
         },
       },
       markdown: {
@@ -65,13 +54,8 @@ export default defineConfig({
           slug: 'index',
         },
         {
-          label: 'Einleitung',
-          autogenerate: { directory: 'einleitung' },
-          collapsed: false,
-        },
-        {
-          label: 'Abschluss',
-          autogenerate: { directory: 'abschluss' },
+          label: 'Introduction',
+          autogenerate: { directory: 'intro' },
           collapsed: false,
         },
       ],

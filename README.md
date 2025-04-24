@@ -1,13 +1,23 @@
-# Documentation Site
+# Astro Starlight powered by Keystatic
 
-A modern documentation website built with [Astro](https://astro.build) and
-[Starlight](https://starlight.astro.build).
+A modern documentation website built with [Astro](https://astro.build),
+[Starlight](https://starlight.astro.build) and
+[Keystatic](https://keystatic.com)
 
 ## 📚 Overview
 
-This project is a documentation site that leverages Starlight, Astro's official
-documentation theme. It provides a fast, accessible, and customizable platform
-for creating technical documentation.
+This project is a documentation site that leverages Starlight (v0.34.0), Astro's
+official documentation theme. It provides a fast, accessible, and customizable
+platform for creating technical documentation.
+
+Built with:
+
+- [Astro](https://astro.build) v5.7.5
+- [Starlight](https://starlight.astro.build) v0.34.0
+- [Keystatic](https://keystatic.com) v5.0.0
+
+Forked and inspired by:
+[Starlight Keystatic](https://github.com/keystatic/starlight-keystatic).
 
 ## ✨ Features
 
@@ -19,23 +29,46 @@ for creating technical documentation.
 - 📝 Markdown & MDX support
 - 🔧 TypeScript ready
 - 📊 Keystatic CMS Integration
-- 🌟 All components of Starlight are available
+- ☁️ Keystatic Cloud Ready
+- 📅 Last Deployment Date
+- 🔍 Medium Zoom Image
 
 ## 🚀 Project Structure
 
 ```
 .
-├── public/             # Static assets (favicons, images, etc.)
+├── public/            # Static assets (favicons, images, etc.)
 ├── src/
-│   ├── assets/         # Project images and media files
-│   │   ├── docs/       # Documentation pages (markdown/MDX)
-│   │   └── config.ts   # Starlight configuration
-│   └── env.d.ts        # TypeScript declarations
-├── keystatic.config.ts # Keystatic CMS configuration
-├── astro.config.mjs    # Astro configuration
-├── package.json        # Project dependencies and scripts
-└── tsconfig.json       # TypeScript configuration
+│   ├── assets/        # Project images and media files
+│   ├── components/    # React/Astro components
+│   ├── content/       # Documentation content (markdown/MDX)
+│   ├── data/          # Data files and configurations
+│   ├── fonts/         # Custom fonts
+│   ├── styles/        # Global styles and CSS
+│   ├── content.config.ts  # Starlight configuration
+│   └── env.d.ts       # TypeScript declarations
+├── keystatic.config.tsx  # Keystatic CMS configuration
+├── astro.config.mjs   # Astro configuration
+├── package.json       # Project dependencies and scripts
+├── tsconfig.json      # TypeScript configuration
+├── .prettierrc.json   # Prettier configuration
+├── .prettierignore    # Prettier ignore rules
+├── .gitignore        # Git ignore rules
+└── .nvmrc            # Node version specification
 ```
+
+## 🎨 Resources
+
+### Typography
+
+- **Used Font**: Inter
+  - A modern, clean sans-serif typeface designed for optimal readability
+  - [More Information](https://fonts.google.com/specimen/Inter)
+
+### Brand Assets
+
+- **Logo**: Lorem Ipsum Logo
+- [More Information](https://logoipsum.com)
 
 ## 🎨 Customization
 
@@ -75,4 +108,5 @@ content.
 
 ### Media Upload
 
-The Media is uploaded to Cloudinary.
+Use an external service to upload media files like Cloudinary and paste the code
+inside the component blocks.
