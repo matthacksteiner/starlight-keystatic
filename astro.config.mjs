@@ -19,8 +19,8 @@ export default defineConfig({
         Header: './src/custom/CustomHeader.astro',
       },
       logo: {
-        light: './src/assets/logo-light.svg',
-        dark: './src/assets/logo-dark.svg',
+        light: './src/assets/light-logo.svg',
+        dark: './src/assets/dark-logo.svg',
         replacesTitle: true,
       },
       social: [
